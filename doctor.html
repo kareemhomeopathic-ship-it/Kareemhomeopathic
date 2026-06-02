@@ -702,6 +702,15 @@ Search Patient
 <button class="btn save-btn" onclick="savePatientData()">
 مریض کی معلومات محفوظ کریں
 </button>
+<button class="btn save-btn"
+style="background:#25D366;margin-top:10px;"
+onclick="sendWhatsApp()">
+
+<i class="fab fa-whatsapp"></i>
+
+WhatsApp Send
+
+</button>
 
 </div>
 
@@ -723,7 +732,7 @@ Search Patient
 
 </div>
 
-```html
+
 <script>
 
 const API_URL="https://script.google.com/macros/s/AKfycbyFi5PXNAExANIhgNPVQe2kaEKC42WBgQ2BRc7vqcRiq7VshhL6OSY48_1oWAZDiA4n1g/exec";
@@ -1317,6 +1326,8 @@ box.dataset.loaded="yes";
 
 /* SAVE */
 
+/* SAVE */
+
 async function savePatientData(){
 
 const payload={
@@ -1354,7 +1365,127 @@ body:JSON.stringify(payload)
 
 });
 
-alert("ریکارڈ اپڈیٹ ہو گیا");
+alert("ریکارڈ محفوظ ہو گیا");
+
+}
+
+/* WHATSAPP */
+
+function sendWhatsApp(){
+
+const patientID=
+document.getElementById('patientID').value;
+
+const name=
+document.getElementById('name').value;
+
+const age=
+document.getElementById('age').value;
+
+const gender=
+document.getElementById('gender').value;
+
+const weight=
+document.getElementById('weight').value;
+
+let mobile=
+document.getElementById('mobile').value.trim();
+
+/* FORMAT NUMBER */
+
+mobile=mobile.replace(/\D/g,'');
+
+if(mobile.startsWith('0')){
+
+mobile='92'+mobile.substring(1);
+
+}
+
+/* TOP 1 REMEDY */
+
+let remedyCount={};
+
+selectedDiseases.forEach(disease=>{
+
+const rows=
+masterData.filter(x=>x.Diseas===disease);
+
+rows.forEach(r=>{
+
+const rem=r.Remedy;
+
+remedyCount[rem]=
+(remedyCount[rem]||0)+1;
+
+});
+
+});
+
+const sorted=
+Object.entries(remedyCount)
+.sort((a,b)=>b[1]-a[1]);
+
+const topRemedy=
+sorted.length>0
+? sorted[0][0]
+: "No Remedy";
+
+/* DISEASES */
+
+let diseaseList='';
+
+selectedDiseases.forEach((d,index)=>{
+
+diseaseList+=`${index+1}. ${d}\n`;
+
+});
+
+/* MESSAGE */
+
+const message=`
+🏥 کریم ہومیوپیتھک کلینک
+
+🆔 Patient ID:
+${patientID}
+
+👤 نام:
+${name}
+
+🎂 عمر:
+${age}
+
+⚧ جنس:
+${gender}
+
+⚖ وزن:
+${weight}
+
+━━━━━━━━━━━━━━
+
+🦠 علامات / بیماریاں:
+
+${diseaseList}
+
+━━━━━━━━━━━━━━
+
+💊 Top Remedy:
+
+${topRemedy}
+
+━━━━━━━━━━━━━━
+
+✅ شکریہ
+
+کریم ہومیوپیتھک کلینک
+`;
+
+window.open(
+
+`https://wa.me/${mobile}?text=${encodeURIComponent(message)}`,
+
+'_blank'
+
+);
 
 }
 
