@@ -138,342 +138,1118 @@ gtag('config', 'G-CJSB1H0N80');
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+
+/* =========================================================
+   BODY
+========================================================= */
 
 body{
-
-font-family:'Noto Naskh Arabic', serif;
-
-background:
-linear-gradient(rgba(20,20,20,.85),rgba(20,20,20,.85)),
-url('https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1600&auto=format&fit=crop');
-
-background-size:cover;
-background-position:center;
-
-min-height:100vh;
-padding:30px;
-color:#fff;
-
+    font-family:'Noto Nastaliq Urdu',serif;
+    background:linear-gradient(
+        135deg,
+        #9ec5fe,
+        #c2e0ff,
+        #d9eeff
+    );
+    min-height:100vh;
+    padding:15px;
+    color:var(--text);
 }
 
-.topbar{
-max-width:850px;
-margin:0 auto 14px auto;
-display:flex;
-justify-content:flex-start;
+
+/* =========================================================
+   COMMON CARD
+========================================================= */
+
+.card{
+    background:#fff;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:10px;
 }
+
+
+/* =========================================================
+   DASHBOARD HEADER
+========================================================= */
+
+.dashboard-header{
+    width:100%;
+    max-width:1600px;
+    margin:0 auto 2px auto;
+    padding:8px 12px;
+
+    display:grid;
+    grid-template-columns:auto minmax(220px,1fr) auto;
+    align-items:center;
+
+    gap:14px;
+
+    background:linear-gradient(
+    135deg,
+    #1976d2,
+    #0d47a1
+);
+    border:1px solid var(--border);
+    border-radius:14px;
+
+    box-shadow:
+        0 5px 18px rgba(25,118,210,.10);
+}
+
+.dashboard-header .title{
+    font-size:25px;
+    font-weight:bold;
+    white-space:nowrap;
+    text-align:center;
+    color:#fff;
+    line-height:1.3;
+}
+
+.header-search{
+    width:100%;
+}
+ٓ/* =========================================================
+   PATIENT INSTRUCTIONS
+========================================================= */
+
+.patient-instructions{
+    width:100%;
+    max-width:1600px;
+
+    margin:0 auto 8px auto;
+
+    padding:8px 14px;
+
+    background:rgba(255,255,255,.94);
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    box-shadow:
+        0 4px 14px rgba(25,118,210,.08);
+
+    text-align:center;
+}
+
+
+.patient-instructions .instruction-title{
+    margin-bottom:4px;
+
+    color:var(--primary-dark);
+
+    font-size:15px;
+
+    font-weight:bold;
+}
+
+
+.patient-instructions .instruction-text{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:6px 12px;
+
+    color:#444;
+
+    font-size:12px;
+
+    line-height:1.7;
+}
+
+
+.patient-instructions .instruction-text span{
+    color:var(--primary);
+
+    font-weight:bold;
+}
+
+
+.patient-instructions strong{
+    color:var(--primary-dark);
+}
+
+
+/* =========================================================
+   GLOBAL SEARCH
+========================================================= */
+
+#globalSearch{
+    width:100%;
+    height:40px;
+
+    padding:0 14px;
+    margin:0;
+
+    font-size:15px;
+
+    border:1px solid #d8e2ec;
+    outline:none;
+    border-radius:10px;
+
+    background:#fff;
+    color:#000;
+
+    transition:.3s;
+}
+
+#globalSearch::placeholder{
+    font-size:14px;
+    color:#888;
+}
+
+#globalSearch:focus{
+    border-color:#2196f3;
+    box-shadow:
+        0 0 0 4px rgba(33,150,243,.12);
+}
+
+
+/* =========================================================
+   ADMIN BUTTON
+========================================================= */
 
 .admin-btn{
-display:inline-block;
-padding:8px 16px;
-background:#ff9800;
-color:#fff;
-text-decoration:none;
-border-radius:10px;
-font-size:13px;
-font-weight:bold;
-transition:.3s;
+    display:inline-block;
+
+    padding:9px 16px;
+
+    background:#2196f3;
+    color:#fff;
+
+    text-decoration:none;
+border:none;
+    cursor:pointer;
+    border-radius:12px;
+
+    font-size:13px;
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    transition:.3s;
+
+    box-shadow:
+        0 4px 12px rgba(33,150,243,.25);
 }
 
 .admin-btn:hover{
-transform:scale(1.04);
-background:#ffb340;
+    transform:translateY(-2px);
+    background:#1976d2;
 }
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
 
 .main-card{
-max-width:850px;
-margin:auto;
-background:rgba(40,40,40,.35);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.15);
-border-radius:24px;
-padding:22px;
-box-shadow:0 0 30px rgba(0,0,0,.35);
+    max-width:1600px;
+    width:100%;
+
+    margin:0 auto;
+
+    padding:0 12px 12px;
+
+    border-radius:14px;
+}
+ 
+/* =========================================================
+   STEP
+========================================================= */
+
+.step{
+    display:block;
+
+    margin-bottom:0;
+    padding-bottom:0;
 }
 
-.title{
-font-size:32px;
-text-align:center;
-margin-bottom:12px;
-font-weight:bold;
-line-height:1.6;
+.step:last-child{
+    border-bottom:none;
+}
+ 
+/* =========================================================
+COMPACT ROW
+========================================================= */
+
+.compact-row{
+    display:grid;
+
+    grid-template-columns:
+        minmax(270px,.72fr)
+        minmax(400px,1.00fr)
+        minmax(520px,1.55fr);
+
+    gap:12px;
+
+    align-items:stretch;
+
+    width:100%;
+    margin-bottom:12px;
 }
 
-.subtitle{
-text-align:center;
-font-size:16px;
-line-height:1.9;
-margin-bottom:20px;
-color:#ddd;
+
+
+/* =========================================================
+   DASHBOARD CARDS
+========================================================= */
+
+.compact-row > .card{
+    height:370px;
+    min-height:370px;
+
+    display:flex;
+    flex-direction:column;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+    border-radius:16px;
+
+    padding:14px;
+
+    box-shadow:
+        0 6px 20px rgba(25,118,210,.10);
+
+    transition:.25s;
 }
 
-.step{ display:none; }
-.active{ display:block; }
+.compact-row > .card:hover{
+    box-shadow:
+        0 10px 28px rgba(25,118,210,.16);
+
+    border-color:#bcd7f2;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
 
 .section-title{
-font-size:22px;
-margin-bottom:12px;
-color:#ffcf66;
-line-height:1.7;
+    flex-shrink:0;
+
+    min-height:42px;
+
+    display:flex;
+    align-items:center;
+
+    margin:0 0 10px 0;
+    padding:7px 10px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #edf6ff,
+            #dceeff
+        );
+
+    border-right:4px solid var(--primary);
+
+    color:var(--primary-dark);
+
+    font-size:18px;
+    font-weight:bold;
+
+    line-height:1.4;
 }
 
-.section-description{
-font-size:15px;
-line-height:1.9;
-margin-bottom:16px;
-color:#ddd;
+
+ 
+/* =========================================================
+   PATIENT CARD
+========================================================= */
+
+.compact-row > .card:first-child{
+    min-width:270px;
 }
 
-label{
-display:block;
-margin-top:10px;
-margin-bottom:5px;
-font-size:15px;
+
+/* =========================================================
+   PATIENT FORM - ONE LINE EACH
+========================================================= */
+
+.patient-card .patient-row{
+    display:grid;
+    grid-template-columns:72px 1fr;
+
+    align-items:center;
+
+    gap:8px;
+
+    margin-bottom:8px;
 }
 
-input,select{
-width:100%;
-padding:10px 12px;
-border:none;
-outline:none;
-border-radius:10px;
-background:rgba(255,255,255,.15);
-color:#fff;
-font-size:14px;
+
+/* =========================================================
+   PATIENT LABEL
+========================================================= */
+
+.patient-card .patient-row label{
+    margin:0;
+
+    font-size:13px;
+    font-weight:600;
+
+    white-space:nowrap;
+
+    color:#333;
 }
 
-input::placeholder{ color:#ddd; }
-select option{ color:#000; }
+
+/* =========================================================
+   PATIENT INPUT
+========================================================= */
+
+.patient-card .patient-row input{
+    width:100%;
+
+    height:38px;
+
+    padding:0 10px;
+
+    font-size:13px;
+
+    border-radius:10px;
+}
+
+
+/* =========================================================
+   SLIP NO
+   READONLY FIELD — صرف نمبر دکھے گا
+========================================================= */
+
+.patient-card #patientID{
+    text-align:center;
+    font-weight:bold;
+}
+
+
+/* =========================================================
+   GENDER ROW
+========================================================= */
+
+.patient-card .gender-box{
+    display:flex;
+
+    gap:6px;
+
+    width:100%;
+}
+
+
+.patient-card .gender-btn{
+    flex:1;
+
+    height:38px;
+
+    padding:0 6px;
+
+    border-radius:10px;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   REMOVE UNUSED OLD GRID EFFECT
+========================================================= */
+
+.patient-card .grid-2{
+    display:block;
+}
+```
+
+
+
+/* =========================================================
+   PART CARD
+========================================================= */
+
+```css
+/* =========================================================
+   PART CARD
+========================================================= */
+
+.compact-row > .card:nth-child(2){
+    min-width:400px;
+}
+
+.compact-row > .card:nth-child(2) #partsPanel{
+    flex:1;
+    overflow-y:auto;
+    align-content:flex-start;
+}
+
+
+
+
+/* =========================================================
+   DISEASE CARD
+========================================================= */
+
+.compact-row > .card:nth-child(3){
+    min-width:300px;
+}
+
+.compact-row > .card:nth-child(3) #dynamicSections{
+    flex:1;
+    max-height:none;
+    overflow-y:auto;
+    padding-right:3px;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
 
 .grid-2{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
-.parts-tabs{
-display:flex;
-flex-wrap:wrap;
-gap:12px;
-margin-bottom:25px;
+
+/* =========================================================
+   FORM
+========================================================= */
+
+label{
+    display:block;
+
+    margin-top:12px;
+    margin-bottom:6px;
+
+    font-size:15px;
+    font-weight:600;
+
+    color:#333;
+}
+
+input,
+select{
+    width:100%;
+
+    padding:12px 14px;
+
+    border:1px solid #d8e2ec;
+    outline:none;
+
+    border-radius:12px;
+
+    background:#fff;
+    color:#000;
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+input:focus,
+select:focus{
+    border-color:#2196f3;
+
+    box-shadow:
+        0 0 0 4px rgba(33,150,243,.12);
+}
+
+input::placeholder{
+    color:#888;
+}
+
+select option{
+    color:#000;
+}
+
+
+/* =========================================================
+   GENDER
+========================================================= */
+
+.gender-box{
+    display:flex;
+    gap:10px;
+    width:100%;
+}
+
+.gender-btn{
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:14px;
+    font-weight:bold;
+
+    background:#eef3f8;
+    color:#333;
+
+    transition:.3s;
+}
+
+.gender-btn:hover{
+    transform:translateY(-2px);
+}
+
+.gender-btn.active-gender{
+    background:#2196f3;
+    color:#fff;
+}
+
+
+/* =========================================================
+   PART BUTTONS
+========================================================= */
+
+#partsPanel{
+    display:flex;
+    flex-wrap:wrap;
+
+    align-items:flex-start;
+
+    gap:4px;
+
+    padding:2px 0;
 }
 
 .part-btn{
-padding:7px 13px;
-border-radius:30px;
-background:rgba(255,255,255,.12);
-border:1px solid rgba(255,255,255,.15);
-cursor:pointer;
-font-size:12px;
-transition:.3s;
-line-height:1.5;
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin:4px;
+
+    padding:7px 14px;
+
+    font-size:14px;
+    font-weight:600;
+
+    line-height:1.6;
+
+    white-space:nowrap;
+
+    border-radius:10px;
+
+    background:#f5f9ff;
+
+    border:1px solid #cfe3ff;
+
+    color:#333;
+
+    cursor:pointer;
+
+    transition:.25s;
 }
 
-.part-btn:hover{ background:#ff9800; }
+.part-btn:hover{
+    background:#e8f2ff;
+    color:var(--primary-dark);
+}
 
 .part-btn.active-tab{
-background:#ff9800;
-color:#fff;
+    background:#1976d2;
+    color:#fff;
 }
 
-/* =========================
-DROPDOWN UI (COMPACT FIXED)
-========================= */
+
+/* =========================================================
+   PART CONTENT
+========================================================= */
+
+.part-content{
+    display:none;
+    margin-bottom:20px;
+}
+
+.part-content.active{
+    display:block;
+}
+
+.part-content h3{
+    margin:10px 0;
+
+    color:var(--primary-dark);
+
+    font-size:18px;
+}
+
+
+/* =========================================================
+   DISEASE BOX
+========================================================= */
 
 .disease-box{
-margin-top:10px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-border-radius:12px;
-overflow:hidden;
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:6px;
+
+    align-items:flex-start;
 }
 
-/* HEADER (more compact) */
-.dropdown-header{
-padding:10px 12px;
-cursor:pointer;
-background:rgba(255,255,255,.08);
-font-size:14px;
-font-weight:bold;
-display:flex;
-justify-content:space-between;
-align-items:center;
-transition:.25s;
-}
 
-.dropdown-header:hover{
-background:rgba(255,152,0,.18);
-}
+/* =========================================================
+   CHECKBOX ITEM
+========================================================= */
 
-.dropdown-header span{
-font-size:16px;
-}
-
-/* LIST (compact spacing) */
-.dropdown-list{
-display:none;
-max-height:260px;
-overflow-y:auto;
-padding:6px 8px;
-background:rgba(0,0,0,.12);
-}
-
-.dropdown-list.show{
-display:block;
-}
-
-/* scrollbar */
-.dropdown-list::-webkit-scrollbar{
-width:5px;
-}
-
-.dropdown-list::-webkit-scrollbar-thumb{
-background:#ff9800;
-border-radius:10px;
-}
-
-/* ITEM (reduced spacing) */
 .checkbox-item{
-display:flex;
-align-items:center;
-gap:8px;
-padding:6px 6px;
-border-bottom:1px solid rgba(255,255,255,.06);
-font-size:13px;
-line-height:1.6;
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:7px 12px;
+
+    margin:0;
+
+    border-radius:18px;
+
+    white-space:nowrap;
+
+    background:#f8fbff;
+
+    border:1px solid #dbe8f5;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-size:13px;
+
+    line-height:1.8;
 }
 
-.checkbox-item:last-child{
-border-bottom:none;
+.checkbox-item:hover{
+    background:#2196f3;
+    color:#fff;
+
+    transform:translateY(-2px);
 }
 
-/* checkbox smaller */
+.checkbox-item.selected{
+    background:#00b894 !important;
+    color:#fff !important;
+
+    border-color:#00b894 !important;
+}
+
 .checkbox-item input{
-width:16px;
-height:16px;
-accent-color:#ff9800;
-cursor:pointer;
-flex-shrink:0;
+    width:auto;
+    margin:0;
+    padding:0;
 }
 
-.checkbox-item label{
-margin:0;
-cursor:pointer;
-flex:1;
+
+/* =========================================================
+   SELECTED DISEASE CARD
+========================================================= */
+
+.selected-card{
+    margin-top:6px;
+
+    min-height:65px;
+
+    padding:8px 10px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    box-shadow:
+        0 6px 20px rgba(25,118,210,.10);
 }
 
-/* NAVIGATION */
-.navigation{
-margin-top:20px;
-display:flex;
-justify-content:space-between;
-gap:10px;
+.selected-card .section-title{
+    margin-bottom:10px;
 }
 
-.next-btn,.prev-btn{
-padding:10px 18px;
-border:none;
-cursor:pointer;
-border-radius:10px;
-font-size:14px;
-font-weight:bold;
+.selected-tags{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:6px;
+
+    align-items:center;
+}
+
+.selected-tag{
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:6px 12px;
+
+    border-radius:20px;
+
+    font-size:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2196f3,
+            #1565c0
+        );
+
+    color:#fff;
+
+    box-shadow:
+        0 3px 8px rgba(33,150,243,.18);
+}
+
+.selected-tag-remove{
+    cursor:pointer;
+
+    font-weight:bold;
+
+    margin-right:6px;
+}
+
+
+/* =========================================================
+   FOOTER NOTE
+========================================================= */
+
+.footer-note{
+    margin-top:12px;
+
+    padding:10px;
+
+    border-radius:10px;
+
+    background:#eef7ff;
+
+    font-size:12px;
+
+    line-height:1.7;
+
+    text-align:center;
+}
+/* =========================================================
+   FORM FOOTER
+========================================================= */
+
+.form-footer{
+    width:100%;
+
+    margin-top:12px;
+
+    padding:12px 0;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   SUBMIT AREA IN FOOTER
+========================================================= */
+
+.form-footer .submit-area{
+    width:100%;
+
+    margin:0;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.submit-area{
+    margin-top:15px;
+    text-align:center;
 }
 
 .next-btn{
-background:#ff9800;
-color:#fff;
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2196f3,
+            #1565c0
+        );
+
+    color:#fff;
+
+    font-size:15px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 4px 12px rgba(33,150,243,.20);
+
+    transition:.25s;
 }
 
-.prev-btn{
-background:#555;
-color:#fff;
+.next-btn:hover{
+    transform:translateY(-2px);
+}
+
+.next-btn:disabled{
+    cursor:not-allowed;
+    transform:none;
 }
 
 .loader{
-display:none;
-text-align:center;
-margin-top:20px;
+    display:none;
+
+    margin-top:10px;
+
+    text-align:center;
+
+    color:#1976d2;
+
+    font-weight:bold;
 }
 
 .success{
-display:none;
-text-align:center;
-padding:50px 20px;
+    display:none;
+
+    margin-top:15px;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    background:#e8fff5;
+
+    border:1px solid #8de0bd;
+
+    color:#00895a;
+
+    text-align:center;
 }
 
 .success h2{
-font-size:35px;
-margin-bottom:20px;
-color:#00ff95;
+    margin:0 0 6px 0;
 }
 
 .success p{
-font-size:20px;
-line-height:2;
+    margin:0;
+    line-height:2;
 }
 
-/* MOBILE */
+
+/* =========================================================
+   ERROR BOX
+========================================================= */
+
+.api-error{
+    padding:15px;
+
+    background:#fff3f3;
+
+    color:#c62828;
+
+    border:1px solid #ffcdd2;
+
+    border-radius:10px;
+
+    text-align:center;
+}
+
+
+/* =========================================================
+   SCROLLBARS
+========================================================= */
+
+#partsPanel::-webkit-scrollbar,
+#dynamicSections::-webkit-scrollbar{
+    width:6px;
+}
+
+#partsPanel::-webkit-scrollbar-thumb,
+#dynamicSections::-webkit-scrollbar-thumb{
+    background:#b7d5f5;
+    border-radius:10px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1100px){
+
+    .compact-row{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .compact-row > .card:first-child{
+        grid-column:1 / -1;
+    }
+
+    .compact-row > .card{
+        height:420px;
+        min-height:420px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media(max-width:768px){
 
-body{ padding:12px; }
+    body{
+        padding:8px;
+    }
 
-.main-card{
-padding:16px;
-border-radius:18px;
+    .dashboard-header{
+        grid-template-columns:auto 1fr;
+
+        gap:8px;
+
+        padding:8px;
+    }
+
+    .dashboard-header .title{
+        grid-column:1 / -1;
+        grid-row:1;
+
+        font-size:20px;
+    }
+
+    .dashboard-header .admin-btn{
+        grid-column:1;
+        grid-row:2;
+
+        padding:8px 12px;
+
+        font-size:11px;
+    }
+
+    .dashboard-header .header-search{
+        grid-column:2;
+        grid-row:2;
+    }
+
+    #globalSearch{
+        height:40px;
+        font-size:13px;
+    }
+
+    .main-card{
+        padding:0 4px 10px;
+        border-radius:18px;
+    }
+
+    .compact-row{
+        grid-template-columns:1fr;
+    }
+
+    .compact-row > .card:first-child{
+        grid-column:auto;
+        min-height:390px;
+    }
+
+    .compact-row > .card:nth-child(2),
+    .compact-row > .card:nth-child(3){
+        min-height:360px;
+    }
+
+    .compact-row > .card{
+        height:auto;
+    }
+
+    .grid-2{
+        grid-template-columns:1fr;
+        gap:10px;
+    }
+
+    .section-title{
+        font-size:18px;
+    }
+
+    .part-btn{
+        padding:10px 20px;
+
+        margin:3px;
+
+        border-radius:40px;
+    }
+
+    .checkbox-item{
+        width:100%;
+
+        font-size:12px;
+
+        padding:9px 12px;
+    }
+
+    .selected-tag{
+        font-size:12px;
+    }
+
+    .next-btn{
+        width:100%;
+        padding:12px;
+    }
+
 }
 
-.topbar{ margin-bottom:10px; }
 
-.admin-btn{
-padding:7px 12px;
-font-size:11px;
-}
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
-.grid-2{
-grid-template-columns:1fr;
-gap:10px;
-}
+@media(max-width:480px){
 
-.title{ font-size:24px; }
+    body{
+        padding:5px;
+    }
 
-.subtitle{
-font-size:14px;
-line-height:1.8;
-}
+    .dashboard-header{
+        border-radius:10px;
+    }
 
-.section-title{ font-size:18px; }
+    .dashboard-header .title{
+        font-size:18px;
+    }
 
-.section-description{ font-size:14px; }
+    .admin-btn{
+        font-size:10px;
+    }
 
-.part-btn{
-padding:6px 10px;
-font-size:11px;
-}
+    .section-title{
+        font-size:16px;
+    }
 
-/* compact dropdown mobile */
-.dropdown-header{
-font-size:13px;
-padding:9px 10px;
-}
-
-.checkbox-item{
-font-size:12px;
-padding:6px;
-}
-
-.next-btn,.prev-btn{
-padding:9px 14px;
-font-size:13px;
-}
-
-input,select{
-padding:9px 10px;
-font-size:13px;
-}
+    .compact-row > .card{
+        padding:10px;
+    }
 
 }
 
@@ -481,566 +1257,1781 @@ font-size:13px;
 
 </head>
 
+
 <body>
 
 
-<div class="topbar">
+<!-- =====================================================
+     DASHBOARD HEADER
+===================================================== -->
 
-<a href="Doctor.html" class="admin-btn">
+<div class="dashboard-header">
 
-Admin
+<button
+    type="button"
+    class="admin-btn"
+    onclick="openAdmin()">
+    Admin
+</button>
 
-</a>
+    <h1 class="title">
+        کریم ہومیوپیتھک کلینک
+    </h1>
+
+    <div class="header-search">
+
+        <input
+            type="text"
+            id="globalSearch"
+            placeholder="🔍 بیماری، علامت یا Part تلاش کریں..."
+            autocomplete="off">
+
+    </div>
 
 </div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <div class="main-card">
+ 
 
-<div id="welcomeStep" class="step active">
-
-<h1 class="title">کریم ہومیوپیتھک کلینک</h1>
-
-<p class="subtitle">
-
-مریض اپنی علامات آسانی سے منتخب کریں۔<br>
-تمام معلومات محفوظ اور خفیہ رہیں گی۔
-
-</p>
-
-<div class="info-box">
-
-<b>فارم بھرنے کا طریقہ (اہم ہدایات):</b><br>
-
-✔ پہلے اپنی basic معلومات بھر کر “اگلا مرحلہ” دبائیں<br>
-
-✔ ہر سیکشن (دماغ، اعصاب وغیرہ) کو ایک ایک کر کے کھولیں<br>
-
-✔ جو علامات موجود ہوں صرف انہیں منتخب کریں<br>
-
-✔ ایک سے زیادہ علامات منتخب کی جا سکتی ہیں (multi select)<br>
-
-✔ غلط یا غیر متعلق علامات منتخب نہ کریں<br>
-
-✔ جتنی درست selection ہوگی، ریمیڈی اتنی بہتر آئے گی<br>
-
-</div>
-<div style="text-align:center">
-
-<button class="next-btn" onclick="nextStep(1)">
-فارم شروع کریں
-</button>
-
-</div>
-
-</div>
+    <div id="welcomeStep"
+         class="step">
+    </div>
 
 
+    <div id="step1"
+         class="step">
+ <!-- =====================================================
+     PATIENT INSTRUCTIONS
+===================================================== -->
 
-<div id="step1" class="step">
+<div class="patient-instructions">
 
-<h2 class="section-title">مریض کی معلومات</h2>
+    <div class="instruction-title">
+        فارم پُر کرنے کا آسان طریقہ
+    </div>
 
-<label>Slip No</label>
-<input type="text" id="patientID" readonly>
+    <div class="instruction-text">
 
-<label>مریض کا نام</label>
-<input type="text" id="name">
+        <span>①</span>
+        پہلے اپنی بنیادی معلومات درج کریں۔
 
-<div class="grid-2">
+        <span>②</span>
+        پھر وہ جگہ منتخب کریں جہاں آپ کو تکلیف ہے۔
 
-<div>
+        <span>③</span>
+        سامنے آنے والی علامات میں سے اپنی موجودہ علامات منتخب کریں۔
 
-<label>عمر</label>
-<input type="number" id="age">
+        <span>④</span>
+        اگر ایک سے زیادہ علامات ہیں تو تمام متعلقہ علامات منتخب کریں۔
 
-</div>
+        <span>⑤</span>
+        آخر میں <strong>فارم محفوظ کریں</strong> دبائیں۔
 
-<div>
-
-<label>جنس</label>
-
-<select id="gender">
-
-<option value="">منتخب کریں</option>
-<option>مرد</option>
-<option>عورت</option>
-
-</select>
-
-</div>
-
-</div>
-
-<div class="grid-2">
-
-<div>
-
-<label>وزن</label>
-<input type="text" id="weight">
-
-</div>
-
-<div>
-
-<label>موبائل نمبر</label>
-<input type="text" id="mobile">
-
-</div>
-
-</div>
-
-<div class="navigation">
-
-<button class="next-btn" onclick="validatePatientInfo()">
-اگلا مرحلہ
-</button>
-
-</div>
+    </div>
 
 </div>
 
 
+        <!-- =================================================
+             THREE CARD ROW
+        ================================================== -->
 
-<div id="dynamicSections"></div>
+        <div class="compact-row">
 
 
+            <!-- =============================================
+                 PATIENT CARD
+            ============================================== -->
 
-<div class="success" id="successBox">
+           <div class="card patient-card">
 
-<h2>فارم کامیابی سے جمع ہو گیا</h2>
+    <h2 class="section-title">
+        مریض کی معلومات
+    </h2>
 
-<p>
+    <div class="patient-row">
 
-آپ کی معلومات محفوظ کر لی گئی ہیں۔<br>
-جلد آپ سے رابطہ کیا جائے گا۔
+        <label>Slip No</label>
 
-</p>
+        <input
+            type="text"
+            id="patientID"
+            readonly>
+
+    </div>
+
+
+    <div class="patient-row">
+
+        <label>مریض کا نام</label>
+
+        <input
+            type="text"
+            id="name"
+            placeholder="مریض کا نام">
+
+    </div>
+
+
+    <div class="patient-row">
+
+        <label>عمر</label>
+
+        <input
+            type="number"
+            id="age"
+            min="0"
+            placeholder="عمر">
+
+    </div>
+
+
+    <div class="patient-row">
+
+        <label>جنس</label>
+
+        <div class="gender-box">
+
+            <button
+                type="button"
+                class="gender-btn"
+                onclick="selectGender('مرد',this)">
+                👨 مرد
+            </button>
+
+            <button
+                type="button"
+                class="gender-btn"
+                onclick="selectGender('عورت',this)">
+                👩 عورت
+            </button>
+
+        </div>
+
+        <input
+            type="hidden"
+            id="gender">
+
+    </div>
+
+
+    <div class="patient-row">
+
+        <label>وزن</label>
+
+        <input
+            type="text"
+            id="weight"
+            placeholder="وزن">
+
+    </div>
+
+
+    <div class="patient-row">
+
+        <label>موبائل</label>
+
+        <input
+            type="text"
+            id="mobile"
+            inputmode="numeric"
+            placeholder="موبائل نمبر">
+
+    </div>
 
 </div>
 
-</div>
+
+            <!-- =============================================
+                 PART CARD
+            ============================================== -->
+
+            <div class="card">
+
+                <h2 class="section-title">
+                      آپ کو تکلیف کہاں ہے؟
+                </h2>
+
+                <div id="partsPanel">
+                </div>
+
+            </div>
 
 
+            <!-- =============================================
+                 DISEASE CARD
+            ============================================== -->
+
+            <div class="card">
+
+                <h2 class="section-title">
+                    اپنی علامات منتخب کریں
+                </h2>
+
+                <div id="dynamicSections">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SELECTED DISEASES
+        ================================================== -->
+
+        <div class="card selected-card">
+
+            
+
+            <div
+                id="selectedDiseasesPanel"
+                class="selected-tags">
+            </div>
+
+        </div>
+ <footer class="form-footer">
+    </footer>
 
 <script>
 
-const API_URL="https://script.google.com/macros/s/AKfycbyaQi0ot_VK9x2dYXnfJGkBB8nDfBIQxhoKH4tGEG7TKolrlELAHnw-LWJUIReI5WdlRA/exec";
+/* =========================================================
+   KAREEM HOMEOPATHIC CLINIC
+   PATIENT FORM JAVASCRIPT
+   ========================================================= */
 
-const sections=[
+"use strict";
 
-{
-title:'🟠 SECTION 1 — دماغ، ذہن، اعصاب اور نیند',
-description:'اس حصے میں دماغ، اعصاب، ذہنی کیفیت اور نیند کی علامات شامل ہیں۔',
-parts:['دماغ','اعصاب','نیند','مزاج']
-},
 
-{
-title:'🟡 SECTION 2 — سر، آنکھ، کان، ناک، منہ اور گلا',
-description:'اس حصے میں سر، آنکھ، کان، ناک اور گلے کی علامات شامل ہیں۔',
-parts:['سر','آنکھ','کان','ناک','منہ','نرخرہ']
-},
+/* =========================================================
+   API
+========================================================= */
 
-{
-title:'🟢 SECTION 3 — سانس، کھانسی، سینہ اور دل',
-description:'اس حصے میں سانس، سینہ اور دل کی علامات شامل ہیں۔',
-parts:['سانس','دل','شریانی نظام']
-},
+const API_URL =
+"https://script.google.com/macros/s/AKfycbyaQi0ot_VK9x2dYXnfJGkBB8nDfBIQxhoKH4tGEG7TKolrlELAHnw-LWJUIReI5WdlRA/exec";
 
-{
-title:'🟣 SECTION 4 — معدہ، جگر، آنتیں اور نظام ہضم',
-description:'اس حصے میں معدہ، جگر اور نظام ہضم کی علامات شامل ہیں۔',
-parts:['معدہ','شکم','پاخانہ']
-},
 
-{
-title:'🔵 SECTION 5 — پیشاب، مردانہ و زنانہ نظام',
-description:'اس حصے میں پیشاب اور تولیدی نظام کی علامات شامل ہیں۔',
-parts:['نظام بول','مردانہ','زنانہ']
-},
+/* =========================================================
+   GLOBAL STATE
+========================================================= */
 
-{
-title:'🔴 SECTION 6 — جسم، جلد، ہڈیاں اور عمومی علامات',
-description:'اس حصے میں عمومی جسمانی علامات شامل ہیں۔',
-parts:['جلد','حرکت کا نظام','ہاتھ پاوں کے اعضا','عمومی']
-}
+let diseasesData = {};
+let selectedDiseases = [];
+let searchInitialized = false;
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+const sections = [
+
+    {
+        title:"🟠 SECTION 1 — دماغ، ذہن، اعصاب اور نیند",
+        description:"اس حصے میں دماغ، اعصاب، ذہنی کیفیت اور نیند کی علامات شامل ہیں۔",
+        parts:["دماغ","اعصاب","نیند","مزاج"]
+    },
+
+    {
+        title:"🟡 SECTION 2 — سر، آنکھ، کان، ناک، منہ اور گلا",
+        description:"اس حصے میں سر، آنکھ، کان، ناک اور گلے کی علامات شامل ہیں۔",
+        parts:["سر","آنکھ","کان","ناک","منہ","نرخرہ"]
+    },
+
+    {
+        title:"🟢 SECTION 3 — سانس، کھانسی، سینہ اور دل",
+        description:"اس حصے میں سانس، سینہ اور دل کی علامات شامل ہیں۔",
+        parts:["سانس","دل","شریانی نظام"]
+    },
+
+    {
+        title:"🟣 SECTION 4 — معدہ، جگر، آنتیں اور نظام ہضم",
+        description:"اس حصے میں معدہ، جگر اور نظام ہضم کی علامات شامل ہیں۔",
+        parts:["معدہ","شکم","پاخانہ"]
+    },
+
+    {
+        title:"🔵 SECTION 5 — پیشاب، مردانہ و زنانہ نظام",
+        description:"اس حصے میں پیشاب اور تولیدی نظام کی علامات شامل ہیں۔",
+        parts:["نظام بول","مردانہ","زنانہ"]
+    },
+
+    {
+        title:"🔴 SECTION 6 — جسم، جلد، ہڈیاں اور عمومی علامات",
+        description:"اس حصے میں عمومی جسمانی علامات شامل ہیں۔",
+        parts:["جلد","حرکت کا نظام","ہاتھ پاوں کے اعضا","عمومی"]
+    }
 
 ];
 
-let diseasesData={};
-let selectedDiseases=[];
-let currentStep=0;
 
+/* =========================================================
+   LOAD PATIENT ID
+========================================================= */
 
-/* =========================
-SAFE ID HELPER
-========================= */
-function makeSafeId(text){
-return text
-.replace(/\s+/g,'_')
-.replace(/[^\u0600-\u06FFa-zA-Z0-9_]/g,'');
-}
-
-
-/* =========================
-LOAD PATIENT ID
-========================= */
 async function loadPatientID(){
 
-const res=await fetch(API_URL+"?action=getPatientID");
-const data=await res.json();
+    try{
 
-document.getElementById('patientID').value=data.id;
+        const res = await fetch(
+            API_URL +
+            "?action=getPatientID&_=" +
+            Date.now()
+        );
+
+        if(!res.ok){
+            throw new Error("Patient ID API Error");
+        }
+
+        const data = await res.json();
+
+        if(data && data.id){
+
+            document.getElementById("patientID").value =
+                data.id;
+
+        }else{
+
+            console.error(
+                "Patient ID not received",
+                data
+            );
+
+        }
+
+    }catch(error){
+
+        console.error(
+            "loadPatientID:",
+            error
+        );
+
+        alert(
+            "Patient ID حاصل نہیں ہو سکا۔ براہ کرم دوبارہ کوشش کریں۔"
+        );
+
+    }
 
 }
 
 
-/* =========================
-LOAD DISEASES
-========================= */
+/* =========================================================
+   LOAD DISEASES
+========================================================= */
+
 async function loadDiseases(){
 
-const res=await fetch(API_URL+"?action=getDiseases");
-diseasesData=await res.json();
+    try{
 
-createSections();
+        const res = await fetch(
+            API_URL +
+            "?action=getDiseases&_=" +
+            Date.now()
+        );
+
+        if(!res.ok){
+            throw new Error("Disease API Error");
+        }
+
+        const data = await res.json();
+
+        diseasesData = {};
+
+        Object.keys(data || {}).forEach(key => {
+
+            const cleanKey = key.trim();
+
+            if(Array.isArray(data[key])){
+
+                diseasesData[cleanKey] =
+                    data[key];
+
+            }
+
+        });
+
+        createSections();
+
+        initGlobalSearch();
+
+    }catch(error){
+
+        console.error(
+            "loadDiseases:",
+            error
+        );
+
+        const panel =
+            document.getElementById(
+                "dynamicSections"
+            );
+
+        if(panel){
+
+            panel.innerHTML = `
+                <div class="api-error">
+                    بیماریاں لوڈ نہیں ہو سکیں۔
+                </div>
+            `;
+
+        }
+
+    }
 
 }
 
 
-/* =========================
-CREATE SECTIONS
-========================= */
+/* =========================================================
+   CREATE PARTS + DISEASES
+========================================================= */
+
 function createSections(){
 
-const container=document.getElementById('dynamicSections');
-container.innerHTML='';
+    const partsPanel =
+        document.getElementById(
+            "partsPanel"
+        );
 
-sections.forEach((sec,index)=>{
+    const diseasePanel =
+        document.getElementById(
+            "dynamicSections"
+        );
 
-const stepNo=index+2;
+    if(!partsPanel || !diseasePanel){
+        return;
+    }
 
-let html=`
-<div class="step" id="section${stepNo}">
+    partsPanel.innerHTML = "";
+    diseasePanel.innerHTML = "";
 
-<h2 class="section-title">${sec.title}</h2>
+    const allParts = [];
 
-<p class="section-description">${sec.description}</p>
+    sections.forEach(section => {
 
-<div class="parts-tabs">
-`;
+        section.parts.forEach(part => {
 
-sec.parts.forEach((part,pindex)=>{
+            if(!allParts.includes(part)){
 
-const safePart=makeSafeId(part);
+                allParts.push(part);
 
-html+=`
-<div class="part-btn ${pindex===0?'active-tab':''}"
-onclick="showPart('${safePart}',this,'section${stepNo}')">
-${part}
-</div>
-`;
-});
+            }
 
-html+=`</div>`;
+        });
 
-/* PART CONTENTS */
-sec.parts.forEach((part,pindex)=>{
-
-const safePart=makeSafeId(part);
-
-html+=`
-<div class="part-content ${pindex===0?'active':''}"
-id="content-${safePart}">
-
-<h3 style="margin-top:10px;color:#ffcf66">${part}</h3>
-
-<div class="disease-box" id="box-${safePart}"></div>
-
-</div>
-`;
-});
-
-html+=`
-<div class="navigation">
-
-<button class="prev-btn" onclick="prevStep(${stepNo})">پچھلا</button>
-
-<button class="next-btn" onclick="nextSection(${stepNo})">اگلا</button>
-
-</div>
-
-</div>
-`;
-
-container.innerHTML+=html;
-
-});
+    });
 
 
-/* FINAL STEP */
-const finalStepNo=sections.length+2;
+    /* =====================================================
+       PART BUTTONS
+    ===================================================== */
 
-container.innerHTML+=`
-<div class="step" id="finalStep">
+    allParts.forEach((part,index) => {
 
-<h2 class="section-title">فارم جمع کریں</h2>
+        const button =
+            document.createElement("button");
 
-<p class="section-description">تمام منتخب علامات محفوظ کی جائیں گی۔</p>
+        button.type = "button";
 
-<div class="navigation">
+        button.className =
+            "part-btn" +
+            (index === 0
+                ? " active-tab"
+                : "");
 
-<button class="prev-btn" onclick="prevStep(${finalStepNo})">پچھلا</button>
+        button.textContent = part;
 
-<button class="next-btn" onclick="submitForm()">فارم سبمٹ کریں</button>
+        button.addEventListener(
+            "click",
+            function(){
 
-</div>
+                showSinglePart(
+                    part,
+                    this
+                );
 
-<div class="loader" id="loader">محفوظ کیا جا رہا ہے...</div>
+            }
+        );
 
-</div>
-`;
+        partsPanel.appendChild(button);
 
-fillDiseases();
+    });
+
+
+    /* =====================================================
+       PART CONTENT
+    ===================================================== */
+
+    allParts.forEach((part,index) => {
+
+        const content =
+            document.createElement("div");
+
+        content.id =
+            "content-" + part;
+
+        content.className =
+            "part-content" +
+            (index === 0
+                ? " active"
+                : "");
+
+        const heading =
+            document.createElement("h3");
+
+        heading.textContent = part;
+
+        const box =
+            document.createElement("div");
+
+        box.className =
+            "disease-box";
+
+        box.id =
+            "box-" + part;
+
+        content.appendChild(heading);
+        content.appendChild(box);
+
+        diseasePanel.appendChild(content);
+
+    });
+
+
+    /* =====================================================
+       SUBMIT AREA
+    ===================================================== */
+
+    const submitArea =
+        document.createElement("div");
+
+    submitArea.className =
+        "submit-area";
+
+    submitArea.innerHTML = `
+
+        <button
+            type="button"
+            class="next-btn"
+            id="submitButton"
+            onclick="submitForm()">
+
+            فارم محفوظ کریں
+
+        </button>
+
+        <div
+            class="loader"
+            id="loader">
+
+            تجزیہ کیا جا رہا ہے اور فارم محفوظ کیا جا رہا ہے...
+
+        </div>
+
+        <div
+            class="success"
+            id="successBox">
+
+            <h2>
+                فارم کامیابی سے جمع ہو گیا
+            </h2>
+
+            <p>
+                معلومات محفوظ کر لی گئی ہیں۔<br>
+                منتخب کردہ Top Remedy WhatsApp پر بھیج دی گئی ہے۔
+            </p>
+
+        </div>
+
+    `;
+
+       const formFooter =
+        document.querySelector(
+            ".form-footer"
+        );
+
+    if(formFooter){
+
+        formFooter.appendChild(
+            submitArea
+        );
+
+    }
+
+    fillDiseases();
 
 }
 
 
-/* =========================
-FIXED DROPDOWN (OPEN / CLOSE)
-========================= */
+/* =========================================================
+   FILL DISEASES
+========================================================= */
+
 function fillDiseases(){
 
-Object.keys(diseasesData).forEach(part=>{
+    Object.keys(diseasesData)
+        .forEach(part => {
 
-const safePart=makeSafeId(part);
-const diseaseBox=document.getElementById('box-'+safePart);
+            const diseaseBox =
+                document.getElementById(
+                    "box-" + part
+                );
 
-if(!diseaseBox) return;
+            if(!diseaseBox){
+                return;
+            }
 
-diseaseBox.innerHTML='';
+            diseaseBox.innerHTML = "";
 
-/* CREATE WRAPPER */
-const wrapper = document.createElement('div');
+            diseasesData[part]
+                .forEach(disease => {
 
-/* HEADER */
-const header = document.createElement('div');
-header.className = 'dropdown-header';
-header.innerHTML = `<span>${part}</span><span>▼</span>`;
+                    const item =
+                        document.createElement("div");
 
-/* LIST */
-const list = document.createElement('div');
-list.className = 'dropdown-list';
-list.id = 'list-'+safePart;
-
-/* TOGGLE */
-header.onclick = () => {
-
-  /* close others */
-  document.querySelectorAll('.dropdown-list').forEach(el=>{
-    if(el !== list) el.classList.remove('show');
-  });
-
-  list.classList.toggle('show');
-};
-
-wrapper.appendChild(header);
-wrapper.appendChild(list);
-diseaseBox.appendChild(wrapper);
-
-const listData = diseasesData[part] || [];
-
-listData.forEach((disease,index)=>{
-
-const id = safePart+'_'+index;
-
-const item=document.createElement('div');
-item.className='checkbox-item';
-
-item.innerHTML=`
-<input type="checkbox" id="${id}" value="${disease}">
-<label for="${id}">${disease}</label>
-`;
-
-item.querySelector('input').onchange=(e)=>{
-
-if(e.target.checked){
-
-if(!selectedDiseases.includes(disease)){
-selectedDiseases.push(disease);
-}
-
-}else{
-
-selectedDiseases =
-selectedDiseases.filter(d=>d!==disease);
-
-}
-
-};
-
-list.appendChild(item);
-
-});
-
-});
-
-}
+                    item.className =
+                        "checkbox-item";
 
 
-/* =========================
-SHOW PART
-========================= */
-function showPart(part,btn,sectionId){
+                    const label =
+                        document.createElement("label");
 
-const section=document.getElementById(sectionId);
-
-section.querySelectorAll('.part-content')
-.forEach(b=>b.classList.remove('active'));
-
-section.querySelectorAll('.part-btn')
-.forEach(b=>b.classList.remove('active-tab'));
-
-document.getElementById('content-'+part)
-.classList.add('active');
-
-btn.classList.add('active-tab');
-
-}
+                    label.style.cssText =
+                        "display:flex;align-items:center;gap:6px;cursor:pointer;width:100%;";
 
 
-/* =========================
-NAVIGATION
-========================= */
-function nextStep(step){
+                    const checkbox =
+                        document.createElement("input");
 
-document.querySelectorAll('.step')
-.forEach(s=>s.classList.remove('active'));
+                    checkbox.type = "checkbox";
 
-document.getElementById('step'+step)
-.classList.add('active');
+                    checkbox.value =
+                        disease;
 
-currentStep=step;
+                    checkbox.style.margin =
+                        "0";
 
-}
 
-function prevStep(step){
+                    const span =
+                        document.createElement("span");
 
-document.querySelectorAll('.step')
-.forEach(s=>s.classList.remove('active'));
+                    span.textContent =
+                        disease;
 
-document.getElementById('section'+(step-1))
-.classList.add('active');
 
-}
+                    label.appendChild(
+                        checkbox
+                    );
 
-function nextSection(step){
+                    label.appendChild(
+                        span
+                    );
 
-document.querySelectorAll('.step')
-.forEach(s=>s.classList.remove('active'));
+                    item.appendChild(
+                        label
+                    );
 
-if(step==7){
-document.getElementById('finalStep').classList.add('active');
-}else{
-document.getElementById('section'+(step+1)).classList.add('active');
-}
+
+                    checkbox.addEventListener(
+                        "change",
+                        function(){
+
+                            if(this.checked){
+
+                                if(
+                                    !selectedDiseases.includes(
+                                        disease
+                                    )
+                                ){
+
+                                    selectedDiseases.push(
+                                        disease
+                                    );
+
+                                }
+
+                                item.classList.add(
+                                    "selected"
+                                );
+
+                            }else{
+
+                                selectedDiseases =
+                                    selectedDiseases.filter(
+                                        x =>
+                                            x !== disease
+                                    );
+
+                                item.classList.remove(
+                                    "selected"
+                                );
+
+                            }
+
+                            updateSelectedDiseases();
+
+                        }
+                    );
+
+
+                    diseaseBox.appendChild(
+                        item
+                    );
+
+                });
+
+        });
 
 }
 
 
-/* =========================
-VALIDATION
-========================= */
+/* =========================================================
+   SELECTED DISEASES DISPLAY
+========================================================= */
+
+function updateSelectedDiseases(){
+
+    const panel =
+        document.getElementById(
+            "selectedDiseasesPanel"
+        );
+
+    if(!panel){
+        return;
+    }
+
+    panel.innerHTML = "";
+
+    selectedDiseases.forEach(
+        disease => {
+
+            const tag =
+                document.createElement("div");
+
+            tag.className =
+                "selected-tag";
+
+
+            const text =
+                document.createElement("span");
+
+            text.textContent =
+                disease;
+
+
+            const remove =
+                document.createElement("span");
+
+            remove.className =
+                "selected-tag-remove";
+
+            remove.textContent =
+                "✖";
+
+
+            remove.addEventListener(
+                "click",
+                function(){
+
+                    removeDisease(
+                        disease
+                    );
+
+                }
+            );
+
+
+            tag.appendChild(
+                text
+            );
+
+            tag.appendChild(
+                remove
+            );
+
+            panel.appendChild(
+                tag
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   REMOVE DISEASE
+========================================================= */
+
+function removeDisease(disease){
+
+    selectedDiseases =
+        selectedDiseases.filter(
+            x => x !== disease
+        );
+
+
+    document
+        .querySelectorAll(
+            ".checkbox-item input"
+        )
+        .forEach(
+            checkbox => {
+
+                if(
+                    checkbox.value ===
+                    disease
+                ){
+
+                    checkbox.checked =
+                        false;
+
+                    const item =
+                        checkbox.closest(
+                            ".checkbox-item"
+                        );
+
+                    if(item){
+
+                        item.classList.remove(
+                            "selected"
+                        );
+
+                    }
+
+                }
+
+            }
+        );
+
+
+    updateSelectedDiseases();
+
+}
+
+
+/* =========================================================
+   PART SELECTION
+========================================================= */
+
+function showSinglePart(part,btn){
+
+    document
+        .querySelectorAll(
+            ".part-btn"
+        )
+        .forEach(
+            button => {
+
+                button.classList.remove(
+                    "active-tab"
+                );
+
+            }
+        );
+
+
+    btn.classList.add(
+        "active-tab"
+    );
+
+
+    document
+        .querySelectorAll(
+            ".part-content"
+        )
+        .forEach(
+            content => {
+
+                content.classList.remove(
+                    "active"
+                );
+
+                content.style.display =
+                    "none";
+
+            }
+        );
+
+
+    const target =
+        document.getElementById(
+            "content-" + part
+        );
+
+
+    if(target){
+
+        target.classList.add(
+            "active"
+        );
+
+        target.style.display =
+            "block";
+
+    }
+
+}
+
+
+/* =========================================================
+   GENDER
+========================================================= */
+
+function selectGender(
+    gender,
+    btn
+){
+
+    const input =
+        document.getElementById(
+            "gender"
+        );
+
+    if(input){
+
+        input.value =
+            gender;
+
+    }
+
+
+    document
+        .querySelectorAll(
+            ".gender-btn"
+        )
+        .forEach(
+            button => {
+
+                button.classList.remove(
+                    "active-gender"
+                );
+
+            }
+        );
+
+
+    btn.classList.add(
+        "active-gender"
+    );
+
+}
+
+
+/* =========================================================
+   VALIDATE PATIENT
+========================================================= */
+
 function validatePatientInfo(){
 
-const name=document.getElementById('name').value.trim();
-const age=document.getElementById('age').value.trim();
-const gender=document.getElementById('gender').value;
-const mobile=document.getElementById('mobile').value.trim();
+    const name =
+        document.getElementById(
+            "name"
+        ).value.trim();
 
-if(!name || !age || !gender || !mobile){
-alert('تمام معلومات درج کریں');
-return;
+    const age =
+        document.getElementById(
+            "age"
+        ).value.trim();
+
+    const gender =
+        document.getElementById(
+            "gender"
+        ).value;
+
+    const mobile =
+        document.getElementById(
+            "mobile"
+        ).value.trim();
+
+
+    if(
+        !name ||
+        !age ||
+        !gender 
+    ){
+
+        alert(
+            "تمام بنیادی معلومات درج کریں۔"
+        );
+
+        return false;
+
+    }
+
+
+    const cleanMobile =
+        mobile.replace(
+            /\D/g,
+            ""
+        );
+
+
+    if(
+        cleanMobile.length !== 11
+    ){
+
+        alert(
+            "موبائل نمبر 11 ہندسوں پر مشتمل ہونا چاہیے۔"
+        );
+
+        return false;
+
+    }
+
+
+    return true;
+
 }
 
-if(mobile.length!=11){
-alert('موبائل نمبر 11 ہندسوں پر مشتمل ہو');
-return;
+
+/* =========================================================
+   GET TOP REMEDY
+   IMPORTANT:
+   getAnalysis سے آنے والی remedies:
+   [
+       ["Remedy Name", count],
+       ["Remedy Name", count],
+       ...
+   ]
+
+   یہاں صرف پہلی Remedy لی جائے گی۔
+========================================================= */
+
+function getTopRemedy(analysis){
+
+    if(
+        !analysis ||
+        !Array.isArray(
+            analysis.remedies
+        ) ||
+        analysis.remedies.length === 0
+    ){
+
+        return "";
+
+    }
+
+
+    const first =
+        analysis.remedies[0];
+
+
+    /* Expected:
+       ["Remedy Name", Count]
+    */
+
+    if(
+        Array.isArray(first)
+    ){
+
+        return String(
+            first[0] || ""
+        ).trim();
+
+    }
+
+
+    /* Safety fallback */
+
+    if(
+        typeof first === "string"
+    ){
+
+        return first.trim();
+
+    }
+
+
+    return "";
+
 }
 
-document.querySelectorAll('.step')
-.forEach(s=>s.classList.remove('active'));
 
-document.getElementById('section2').classList.add('active');
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+function sendTopRemedyWhatsApp(
+    payload,
+    topRemedy
+){
+
+    if(!topRemedy){
+
+        console.warn(
+            "Top Remedy not available for WhatsApp."
+        );
+
+        return;
+
+    }
+
+
+    const whatsappText =
+
+`کریم ہومیوپیتھک کلینک
+
+Patient ID:
+${payload.patientID}
+
+Name:
+${payload.name}
+
+Age:
+${payload.age}
+
+Gender:
+${payload.gender}
+
+Mobile:
+${payload.mobile}
+
+Top Remedy:
+${topRemedy}`;
+
+
+    const whatsappURL =
+        "https://wa.me/923464650638?text=" +
+        encodeURIComponent(
+            whatsappText
+        );
+
+
+    console.log(
+        "TOP REMEDY:",
+        topRemedy
+    );
+
+    console.log(
+        "WHATSAPP URL:",
+        whatsappURL
+    );
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
 
 }
 
 
-/* =========================
-SUBMIT FORM
-========================= */
+/* =========================================================
+   SUBMIT FORM
+========================================================= */
+
 async function submitForm(){
 
-document.getElementById('loader').style.display='block';
+    /* =====================================================
+       VALIDATION
+    ===================================================== */
 
-const res=await fetch(API_URL+'?action=getAnalysis&diseases='+
-encodeURIComponent(selectedDiseases.join(',')));
+    if(
+        !validatePatientInfo()
+    ){
 
-const analysis=await res.json();
+        return;
 
-const payload={
+    }
 
-patientID:document.getElementById('patientID').value,
-name:document.getElementById('name').value,
-age:document.getElementById('age').value,
-gender:document.getElementById('gender').value,
-weight:document.getElementById('weight').value,
-mobile:document.getElementById('mobile').value,
 
-parts:'',
-diseases:selectedDiseases,
+    if(
+        selectedDiseases.length === 0
+    ){
 
-remedyResult:JSON.stringify(analysis.remedies),
-remedyCount:analysis.remedies.length,
+        alert(
+            "براہ کرم کم از کم ایک بیماری یا علامت منتخب کریں۔"
+        );
 
-symptomResult:JSON.stringify(analysis.symptoms),
-symptomCount:analysis.symptomCount
+        return;
 
-};
+    }
 
-await fetch(API_URL,{
-method:'POST',
-body:JSON.stringify(payload)
-});
 
-const whatsappText=`
-کریم ہومیوپیتھک کلینک
+    const submitButton =
+        document.getElementById(
+            "submitButton"
+        );
 
-Patient ID: ${payload.patientID}
-Name: ${payload.name}
-Age: ${payload.age}
-Gender: ${payload.gender}
-Mobile: ${payload.mobile}
+    const loader =
+        document.getElementById(
+            "loader"
+        );
 
-Diseases: ${selectedDiseases.join(', ')}
-`;
 
-window.open(
-`https://wa.me/923464650638?text=${encodeURIComponent(whatsappText)}`,
-'_blank'
-);
+    if(submitButton){
 
-document.querySelectorAll('.step')
-.forEach(s=>s.classList.remove('active'));
+        submitButton.disabled =
+            true;
 
-document.getElementById('successBox').style.display='block';
+        submitButton.style.opacity =
+            "0.6";
+
+    }
+
+
+    if(loader){
+
+        loader.style.display =
+            "block";
+
+    }
+
+
+    try{
+
+        /* =================================================
+           STEP 1
+           GET ANALYSIS
+        ================================================= */
+
+        const analysisURL =
+            API_URL +
+            "?action=getAnalysis&diseases=" +
+            encodeURIComponent(
+                selectedDiseases.join(",")
+            ) +
+            "&_=" +
+            Date.now();
+
+
+        console.log(
+            "ANALYSIS URL:",
+            analysisURL
+        );
+
+
+        const analysisRes =
+            await fetch(
+                analysisURL
+            );
+
+
+        if(!analysisRes.ok){
+
+            throw new Error(
+                "Analysis request failed: HTTP " +
+                analysisRes.status
+            );
+
+        }
+
+
+        const analysis =
+            await analysisRes.json();
+
+
+        console.log(
+            "FULL ANALYSIS:",
+            analysis
+        );
+
+
+        /* =================================================
+           STEP 2
+           GET ONLY TOP 1 REMEDY
+        ================================================= */
+
+        const topRemedy =
+            getTopRemedy(
+                analysis
+            );
+
+
+        console.log(
+            "TOP 1 REMEDY:",
+            topRemedy
+        );
+
+
+        if(!topRemedy){
+
+            throw new Error(
+                "Analysis سے Top Remedy حاصل نہیں ہوئی۔"
+            );
+
+        }
+
+
+        /* =================================================
+           STEP 3
+           PAYLOAD
+        ================================================= */
+
+        const payload = {
+
+            patientID:
+                document.getElementById(
+                    "patientID"
+                ).value,
+
+            name:
+                document.getElementById(
+                    "name"
+                ).value.trim(),
+
+            age:
+                document.getElementById(
+                    "age"
+                ).value.trim(),
+
+            gender:
+                document.getElementById(
+                    "gender"
+                ).value,
+
+            weight:
+                document.getElementById(
+                    "weight"
+                ).value.trim(),
+
+            mobile:
+                document.getElementById(
+                    "mobile"
+                ).value.trim(),
+
+            parts:"",
+
+            diseases:
+                selectedDiseases,
+
+            /*
+             * Google Sheet میں موجودہ
+             * structure کے مطابق analysis
+             * کا موجودہ result برقرار رہے گا۔
+             */
+            remedyResult:
+                JSON.stringify(
+                    analysis.remedies || []
+                ),
+
+            remedyCount:
+                Array.isArray(
+                    analysis.remedies
+                )
+                ? analysis.remedies.length
+                : 0,
+
+            symptomResult:
+                JSON.stringify(
+                    analysis.symptoms || []
+                ),
+
+            symptomCount:
+                Number(
+                    analysis.symptomCount || 0
+                )
+
+        };
+
+
+        console.log(
+            "SAVE PAYLOAD:",
+            payload
+        );
+
+
+        /* =================================================
+           STEP 4
+           SAVE PATIENT
+        ================================================= */
+
+        const saveRes =
+            await fetch(
+                API_URL,
+                {
+                    method:"POST",
+
+                    headers:{
+                        "Content-Type":
+                            "text/plain;charset=utf-8"
+                    },
+
+                    body:
+                        JSON.stringify(
+                            payload
+                        )
+                }
+            );
+
+
+        if(!saveRes.ok){
+
+            throw new Error(
+                "Google Sheet save failed: HTTP " +
+                saveRes.status
+            );
+
+        }
+
+
+        let saveResult = null;
+
+
+        try{
+
+            saveResult =
+                await saveRes.json();
+
+        }catch(error){
+
+            console.warn(
+                "Save response is not JSON:",
+                error
+            );
+
+        }
+
+
+        console.log(
+            "SAVE RESPONSE:",
+            saveResult
+        );
+ 
+        /* =================================================
+           STEP 5
+           SHOW SUCCESS
+        ================================================= */
+
+        const successBox =
+            document.getElementById(
+                "successBox"
+            );
+
+
+        if(successBox){
+
+            successBox.style.display =
+                "block";
+
+        }
+
+
+        if(submitButton){
+
+            submitButton.style.display =
+                "none";
+
+        }
+
+
+        if(loader){
+
+            loader.style.display =
+                "none";
+
+        }
+
+
+        /* =================================================
+           STEP 6
+           SEND ONLY TOP 1 REMEDY
+           TO WHATSAPP
+        ================================================= */
+
+        sendTopRemedyWhatsApp(
+            payload,
+            topRemedy
+        );
+
+
+        /* =================================================
+           STEP 7
+           SCROLL SUCCESS
+        ================================================= */
+
+        if(successBox){
+
+            successBox.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        }
+ 
+ setTimeout(() => window.location.reload(), 1500);
+
+    }catch(error){
+
+        console.error(
+            "SUBMIT ERROR:",
+            error
+        );
+
+
+        alert(
+            "معلومات محفوظ نہیں ہو سکیں۔\n\n" +
+            "براہ کرم دوبارہ کوشش کریں۔\n\n" +
+            "Error: " +
+            error.message
+        );
+
+
+        if(submitButton){
+
+            submitButton.disabled =
+                false;
+
+            submitButton.style.opacity =
+                "1";
+
+        }
+
+
+        if(loader){
+
+            loader.style.display =
+                "none";
+
+        }
+
+    }
+
+}
+ 
+ 
+     
+ 
+
+
+
+/* =========================================================
+   GLOBAL SEARCH
+========================================================= */
+
+function initGlobalSearch(){
+
+    if(searchInitialized){
+
+        return;
+
+    }
+
+
+    const search =
+        document.getElementById(
+            "globalSearch"
+        );
+
+
+    if(!search){
+
+        return;
+
+    }
+
+
+    searchInitialized =
+        true;
+
+
+    search.addEventListener(
+        "input",
+        function(){
+
+            const value =
+                this.value
+                    .trim()
+                    .toLowerCase();
+
+
+            /* =============================================
+               CLEAR SEARCH
+            ============================================= */
+
+            if(!value){
+
+                document
+                    .querySelectorAll(
+                        ".checkbox-item"
+                    )
+                    .forEach(
+                        item => {
+
+                            item.style.display =
+                                "flex";
+
+                        }
+                    );
+
+
+                document
+                    .querySelectorAll(
+                        ".part-content"
+                    )
+                    .forEach(
+                        part => {
+
+                            if(
+                                part.classList
+                                    .contains(
+                                        "active"
+                                    )
+                            ){
+
+                                part.style.display =
+                                    "block";
+
+                            }else{
+
+                                part.style.display =
+                                    "none";
+
+                            }
+
+                        }
+                    );
+
+
+                return;
+
+            }
+
+
+            /* =============================================
+               SEARCH DISEASES
+            ============================================= */
+
+            Object.keys(
+                diseasesData
+            ).forEach(
+                part => {
+
+                    const box =
+                        document.getElementById(
+                            "box-" + part
+                        );
+
+                    const content =
+                        document.getElementById(
+                            "content-" + part
+                        );
+
+
+                    if(
+                        !box ||
+                        !content
+                    ){
+
+                        return;
+
+                    }
+
+
+                    let hasMatch =
+                        false;
+
+
+                    const items =
+                        box.querySelectorAll(
+                            ".checkbox-item"
+                        );
+
+
+                    items.forEach(
+                        item => {
+
+                            const text =
+                                item.innerText
+                                    .toLowerCase();
+
+
+                            const match =
+                                text.includes(
+                                    value
+                                );
+
+
+                            item.style.display =
+                                match
+                                ? "flex"
+                                : "none";
+
+
+                            if(match){
+
+                                hasMatch =
+                                    true;
+
+                            }
+
+                        }
+                    );
+
+
+                    content.style.display =
+                        hasMatch
+                        ? "block"
+                        : "none";
+
+
+                    if(hasMatch){
+
+                        content.classList.add(
+                            "active"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+}
+/* =========================================================
+   ADMIN PASSWORD
+========================================================= */
+
+function openAdmin(){
+
+    const password =
+        prompt("Admin Password درج کریں:");
+
+    if(password === null){
+        return;
+    }
+
+    if(password === "Miradbaig123"){
+
+        window.location.href =
+            "doctor.html";
+
+    }else{
+
+        alert(
+            "غلط پاسورڈ۔ Admin Panel نہیں کھولا جا سکتا۔"
+        );
+
+    }
 
 }
 
+/* =========================================================
+   INITIALIZE
+========================================================= */
 
-/* INIT */
-loadPatientID();
-loadDiseases();
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        loadPatientID();
+
+        loadDiseases();
+
+        initGlobalSearch();
+
+    }
+);
 
 </script>
+
 </body>
+
 </html>
