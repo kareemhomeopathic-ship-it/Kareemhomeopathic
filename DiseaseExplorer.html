@@ -1,0 +1,1174 @@
+<head>
+
+<meta charset="UTF-8">
+
+<!-- =========================================================
+     MOBILE
+========================================================= -->
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5">
+
+
+<!-- =========================================================
+     INTERNAL DOCTOR PANEL PAGE
+     This page is NOT a public advertising/SEO page.
+========================================================= -->
+
+<title>Disease Explorer | Kareem Homeopathic Clinic</title>
+
+<meta name="description"
+      content="Kareem Homeopathic Clinic internal Disease Explorer for doctor panel.">
+
+
+<!-- =========================================================
+     SEARCH ENGINE CONTROL
+     DO NOT INDEX THIS INTERNAL PAGE
+========================================================= -->
+
+<meta name="robots"
+      content="noindex, nofollow, noarchive, nosnippet">
+
+<meta name="googlebot"
+      content="noindex, nofollow, noarchive, nosnippet">
+
+<meta name="bingbot"
+      content="noindex, nofollow, noarchive, nosnippet">
+
+
+<!-- =========================================================
+     THEME
+========================================================= -->
+
+<meta name="theme-color"
+      content="#1565c0">
+
+
+<!-- =========================================================
+     BROWSER / MOBILE OPTIMIZATION
+========================================================= -->
+
+<meta http-equiv="X-UA-Compatible"
+      content="IE=edge">
+
+<meta name="format-detection"
+      content="telephone=no">
+
+<meta name="mobile-web-app-capable"
+      content="yes">
+
+<meta name="apple-mobile-web-app-capable"
+      content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style"
+      content="default">
+
+
+<!-- =========================================================
+     GOOGLE FONTS
+========================================================= -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;600;700&display=swap"
+      rel="stylesheet">
+
+
+<!-- =========================================================
+     FAVICON
+========================================================= -->
+
+<link rel="icon"
+      type="image/png"
+      href="https://i.ibb.co/1YgnNKZ9/K-1.png">
+
+
+<!-- =========================================================
+     GOOGLE SEARCH CONSOLE
+     Verification can remain on the site.
+========================================================= -->
+
+<meta name="google-site-verification"
+      content="-i5CNrQhtzt-ChSkydCFhAWgH3Gc9XO_niZiaA-rrzo">
+
+
+<!-- =========================================================
+     NO CANONICAL
+     This is an internal application page, not a public
+     search landing page.
+========================================================= -->
+
+
+<!-- =========================================================
+     NO OPEN GRAPH / TWITTER ADVERTISING TAGS
+     
+     This page is internal and should not be promoted
+     as a public page.
+========================================================= -->
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Noto Naskh Arabic',serif;
+}
+
+body{
+
+background:#eef3f8;
+
+}
+
+header{
+
+background:#1565c0;
+
+color:#fff;
+
+padding:18px;
+
+font-size:28px;
+
+font-weight:bold;
+
+text-align:center;
+
+}
+
+.container{
+
+width:95%;
+
+max-width:1400px;
+
+margin:auto;
+
+padding:20px;
+
+}
+
+.searchBox{
+
+background:#fff;
+
+padding:20px;
+
+border-radius:12px;
+
+box-shadow:0 3px 12px rgba(0,0,0,.08);
+
+margin-bottom:20px;
+
+}
+
+.searchBox input{
+
+width:100%;
+
+padding:14px;
+
+font-size:18px;
+
+border:1px solid #bbb;
+
+border-radius:8px;
+
+outline:none;
+
+}
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:15px;
+
+margin-bottom:20px;
+
+}
+
+.card{
+
+background:#fff;
+
+padding:18px;
+
+border-radius:12px;
+
+text-align:center;
+
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+font-size:16px;
+
+color:#666;
+
+margin-bottom:10px;
+
+}
+
+.card h1{
+
+color:#1565c0;
+
+font-size:34px;
+
+}
+
+.content{
+
+display:grid;
+
+grid-template-columns:340px 1fr;
+
+gap:20px;
+
+}
+
+.leftPanel{
+
+background:#fff;
+
+border-radius:12px;
+
+padding:15px;
+
+height:650px;
+
+overflow:auto;
+
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.rightPanel{
+
+background:#fff;
+
+border-radius:12px;
+
+padding:20px;
+
+min-height:650px;
+
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+
+}
+
+.diseaseItem{
+
+padding:12px;
+
+border-bottom:1px solid #eee;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.diseaseItem:hover{
+
+background:#e3f2fd;
+
+}
+
+.diseaseItem.active{
+
+background:#1565c0;
+
+color:#fff;
+
+}
+
+.title{
+
+font-size:26px;
+
+font-weight:bold;
+
+margin-bottom:15px;
+
+color:#1565c0;
+
+}
+
+.info{
+
+margin-bottom:12px;
+
+font-size:18px;
+
+}
+
+.listBox{
+
+margin-top:20px;
+
+}
+
+.listBox h3{
+
+margin-bottom:10px;
+
+color:#1565c0;
+
+}
+
+.tag{
+
+display:inline-block;
+
+background:#1976d2;
+
+color:#fff;
+
+padding:6px 10px;
+
+border-radius:30px;
+
+margin:4px;
+
+font-size:15px;
+
+}
+
+button{
+
+padding:12px 24px;
+
+background:#1565c0;
+
+color:#fff;
+
+border:none;
+
+border-radius:8px;
+
+cursor:pointer;
+
+font-size:17px;
+
+margin-top:20px;
+
+}
+
+button:hover{
+
+background:#0d47a1;
+
+}
+
+@media(max-width:900px){
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.content{
+
+grid-template-columns:1fr;
+
+}
+
+.leftPanel{
+
+height:300px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+Disease Explorer
+
+</header>
+<div style="background:#ffffff;padding:12px 20px;border-bottom:1px solid #ddd;text-align:center;">
+
+<b>Patient :</b>
+<span id="activePatientName"></span>
+
+&nbsp;&nbsp; | &nbsp;&nbsp;
+
+<b>ID :</b>
+<span id="activePatientID"></span>
+
+</div>
+
+<div class="container">
+
+<div class="searchBox">
+
+<input
+id="searchDisease"
+type="text"
+placeholder="بیماری تلاش کریں...">
+
+</div>
+
+<div class="stats">
+
+<div class="card">
+
+<h2>Total Diseases</h2>
+
+<h1 id="totalDisease">0</h1>
+
+</div>
+
+<div class="card">
+
+<h2>Total Remedies</h2>
+
+<h1 id="totalRemedy">0</h1>
+
+</div>
+
+<div class="card">
+
+<h2>Total Symptoms</h2>
+
+<h1 id="totalSymptom">0</h1>
+
+</div>
+
+<div class="card">
+
+<h2>Selected</h2>
+
+<h1 id="selectedCount">0</h1>
+
+</div>
+
+</div>
+
+<div class="content">
+
+<div class="leftPanel" id="diseaseList">
+
+Loading...
+
+</div>
+
+<div class="rightPanel">
+
+<div class="title" id="diseaseTitle">
+
+Select Disease
+
+</div>
+<div class="info">
+
+<b>Disease :</b>
+
+<span id="diseaseName">-</span>
+
+</div>
+
+<div class="info">
+
+<b>Part :</b>
+
+<span id="partName">-</span>
+
+</div>
+
+<div class="info">
+
+<b>Category :</b>
+
+<span id="categoryName">-</span>
+
+</div>
+
+<div class="listBox">
+
+<h3>
+
+Related Remedies
+
+</h3>
+
+<div id="remedyList">
+
+-
+
+</div>
+
+</div>
+
+<div class="listBox">
+
+<h3>
+
+Related Symptoms
+
+</h3>
+
+<div id="symptomList">
+
+-
+
+</div>
+
+</div>
+
+<div class="listBox">
+
+<h3>
+
+Related Diseases
+
+</h3>
+
+<div id="relatedDiseaseList">
+
+-
+
+</div>
+
+</div>
+
+<button onclick="selectDisease()">
+
+Select Disease
+
+</button>
+<button onclick="saveSelectedDiseases()">
+
+Final Select Diseases
+
+</button>
+
+<button onclick="goBack()">
+
+Back Doctor Panel
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+const API =
+"https://script.google.com/macros/s/AKfycbyxEACWjGkesv2wJV_sDPaktmwYrk8Bqn73bNk3Ab6uMXszOJowxcXMnMcRs-ne2f5n4Q/exec";
+
+let masterData=[];
+
+let diseaseMap={};
+
+let currentDisease="";
+let currentRemedy="";
+let remedySelectedDiseases=[];
+
+let selectedDiseases=[];
+
+let activePatient=null;
+
+window.onload=loadData;
+
+async function loadData(){
+
+activePatient=JSON.parse(
+
+localStorage.getItem("activePatient") || "null"
+
+);
+
+if(!activePatient){
+
+alert("پہلے Doctor Panel سے Patient Search کریں");
+
+window.location.href="doctor.html";
+
+return;
+
+}
+document.getElementById("activePatientName").innerHTML=activePatient.Name;
+
+document.getElementById("activePatientID").innerHTML=activePatient.PatientID;
+
+
+const res=await fetch(API+"?action=getDoctorMaster");
+
+masterData=await res.json();
+
+prepareData();
+
+const selectedDisease = localStorage.getItem("selectedDisease") || "";
+
+renderDiseaseList(selectedDisease);
+
+if(selectedDisease && diseaseMap[selectedDisease]){
+
+    showDisease(selectedDisease);
+
+    setTimeout(()=>{
+
+        document.querySelectorAll(".diseaseItem").forEach(item=>{
+
+            if(item.innerText===selectedDisease){
+
+                item.classList.add("active");
+
+                item.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
+
+            }
+
+        });
+
+    },100);
+
+}
+
+updateCards();
+
+}
+
+function prepareData(){
+
+masterData.forEach(r=>{
+
+const disease=r.Diseas;
+
+if(!disease) return;
+
+if(!diseaseMap[disease]){
+
+diseaseMap[disease]={
+
+part:r.Parts,
+
+category:r.Catagry,
+
+remedies:new Set(),
+
+symptoms:new Set(),
+
+related:new Set()
+
+};
+
+}
+
+diseaseMap[disease].remedies.add(r.Remedy);
+
+diseaseMap[disease].symptoms.add(r.Symptom);
+
+});
+
+Object.keys(diseaseMap).forEach(d1=>{
+
+masterData.forEach(r=>{
+
+if(r.Diseas==d1){
+
+masterData.forEach(x=>{
+
+if(
+
+x.Remedy==r.Remedy &&
+
+x.Diseas!=d1
+
+){
+
+diseaseMap[d1]
+.related
+.add(x.Diseas);
+
+}
+
+});
+
+}
+
+});
+
+});
+
+}
+
+function updateCards(){
+
+document.getElementById("totalDisease").innerHTML=
+Object.keys(diseaseMap).length;
+
+document.getElementById("totalRemedy").innerHTML=
+new Set(masterData.map(x=>x.Remedy)).size;
+
+document.getElementById("totalSymptom").innerHTML=
+masterData.length;
+
+document.getElementById("selectedCount").innerHTML=
+selectedDiseases.length;
+
+}
+function renderDiseaseList(filter=""){
+
+const box=document.getElementById("diseaseList");
+
+box.innerHTML="";
+
+const diseases=Object.keys(diseaseMap)
+.sort();
+
+diseases.forEach(d=>{
+
+if(
+filter &&
+!d.toLowerCase().includes(filter.toLowerCase())
+)return;
+
+const div=document.createElement("div");
+
+div.className="diseaseItem";
+
+if(selectedDiseases.includes(d)){
+    div.classList.add("active");
+}
+
+div.innerHTML=d;
+
+div.onclick=function(){
+
+    currentDisease=d;
+
+    showDisease(d);
+
+    if(selectedDiseases.includes(d)){
+
+        selectedDiseases=
+        selectedDiseases.filter(x=>x!==d);
+
+        div.classList.remove("active");
+
+    }else{
+
+        selectedDiseases.push(d);
+
+        div.classList.add("active");
+
+    }
+
+    document.getElementById("selectedCount").innerHTML=
+    selectedDiseases.length;
+
+};
+
+box.appendChild(div);
+
+});
+
+}
+
+document
+.getElementById("searchDisease")
+.addEventListener("keyup",function(){
+
+renderDiseaseList(this.value);
+
+});
+
+function showDisease(name){
+
+currentDisease=name;
+localStorage.setItem("selectedDisease",name);
+
+const data=diseaseMap[name];
+
+document.getElementById("diseaseTitle").innerHTML=name;
+
+document.getElementById("diseaseName").innerHTML=name;
+
+document.getElementById("partName").innerHTML=data.part;
+
+document.getElementById("categoryName").innerHTML=data.category;
+
+showTags(
+
+"remedyList",
+
+[...data.remedies]
+
+);
+
+showTags(
+
+"symptomList",
+
+[...data.symptoms]
+
+);
+
+showTags(
+
+"relatedDiseaseList",
+
+[...data.related]
+
+);
+
+}
+
+function showTags(id,array){
+
+const box=document.getElementById(id);
+
+box.innerHTML="";
+
+if(array.length==0){
+
+box.innerHTML="-";
+
+return;
+
+}
+
+array.sort();
+
+array.forEach(x=>{
+
+const span=document.createElement("span");
+
+span.className="tag";
+
+span.innerHTML=x;
+
+if(id==="remedyList"){
+
+span.onclick=function(){
+
+currentRemedy=x;
+
+showRemedy(x);
+
+};
+
+}
+
+if(id==="relatedDiseaseList"){
+
+if(currentRemedy){
+
+if(remedySelectedDiseases.includes(x)){
+span.style.background="#2e7d32";
+}
+
+span.onclick=function(){
+
+toggleRelatedDisease(span,x);
+
+};
+
+}else{
+
+span.onclick=function(){
+
+currentRemedy="";
+
+showDisease(x);
+
+};
+
+}
+
+}
+
+box.appendChild(span);
+
+});
+
+}
+async function selectDisease(){
+
+if(selectedDiseases.length===0 &&
+remedySelectedDiseases.length===0){
+
+alert("کم از کم ایک بیماری منتخب کریں");
+
+return;
+
+}
+
+let allDiseases=[
+...selectedDiseases,
+...remedySelectedDiseases
+];
+
+allDiseases=[...new Set(allDiseases)];
+
+const res=await fetch(API,{
+
+method:"POST",
+
+body:JSON.stringify({
+
+action:"doctorUpdate",
+
+PatientID:activePatient.PatientID,
+
+extraDiseases:allDiseases
+
+})
+
+});
+
+const data=await res.json();
+
+if(data.status==="doctor_updated"){
+
+localStorage.setItem(
+"doctorDiseases",
+JSON.stringify(allDiseases)
+);
+
+localStorage.setItem(
+"lastSelectedDisease",
+allDiseases[allDiseases.length-1]
+);
+
+localStorage.setItem(
+"returnFrom",
+"DiseaseExplorer"
+);
+
+alert("Doctor Diseases Saved");
+
+window.location.href="doctor.html";
+
+}else{
+
+alert("Save Failed");
+
+}
+
+}
+
+function goBack(){
+
+localStorage.setItem(
+
+"returnFrom",
+
+"DiseaseExplorer"
+
+);
+
+window.location.href="doctor.html";
+
+}
+
+window.addEventListener("load",()=>{
+
+const old=localStorage.getItem("selectedDiseases");
+
+if(old){
+
+selectedDiseases=JSON.parse(old);
+
+updateCards();
+
+}
+
+});
+
+document.addEventListener("dblclick",function(e){
+
+if(
+
+e.target.classList.contains("tag")
+
+){
+
+navigator.clipboard.writeText(
+
+e.target.innerText
+
+);
+
+}
+
+});
+
+document.addEventListener("keydown",function(e){
+
+if(e.key=="Escape"){
+
+document.getElementById("searchDisease").value="";
+
+renderDiseaseList();
+
+}
+
+});
+
+async function saveSelectedDiseases(){
+
+if(!activePatient){
+
+alert("Patient Not Found");
+
+return;
+
+}
+
+if(remedySelectedDiseases.length===0){
+
+alert("کوئی Disease منتخب نہیں کی");
+
+return;
+
+}
+
+const body={
+
+action:"doctorUpdate",
+
+PatientID:activePatient.PatientID,
+
+extraDiseases:remedySelectedDiseases
+
+};
+
+try{
+
+const r=await fetch(API,{
+
+method:"POST",
+
+body:JSON.stringify(body)
+
+});
+
+const res=await r.json();
+
+if(res.status==="doctor_updated"){
+
+alert("Diseases Saved Successfully");
+
+localStorage.setItem(
+"doctorDiseases",
+JSON.stringify(remedySelectedDiseases)
+);
+
+localStorage.setItem(
+"returnFrom",
+"DiseaseExplorer"
+);
+
+window.location.href="doctor.html";
+
+}else{
+
+alert("Save Failed");
+
+}
+
+}catch(err){
+
+console.error(err);
+
+alert(err.message);
+
+}
+
+}
+function showRemedy(remedy){
+
+currentRemedy=remedy;
+
+document.getElementById("diseaseTitle").innerHTML=
+"Remedy : "+remedy;
+
+const symptoms=[];
+const diseases=[];
+
+masterData.forEach(r=>{
+
+if(r.Remedy!==remedy) return;
+
+if(r.Symptom && !symptoms.includes(r.Symptom)){
+symptoms.push(r.Symptom);
+}
+
+if(r.Diseas && !diseases.includes(r.Diseas)){
+diseases.push(r.Diseas);
+}
+
+});
+
+showTags(
+"symptomList",
+symptoms
+);
+
+showTags(
+"relatedDiseaseList",
+diseases
+);
+
+}
+function backToDisease(){
+
+if(!currentDisease) return;
+
+showDisease(currentDisease);
+
+}
+function toggleRelatedDisease(tag,disease){
+
+if(remedySelectedDiseases.includes(disease)){
+
+remedySelectedDiseases=
+remedySelectedDiseases.filter(x=>x!==disease);
+
+tag.style.background="#1976d2";
+
+}else{
+
+remedySelectedDiseases.push(disease);
+
+tag.style.background="#2e7d32";
+
+}
+
+document.getElementById("selectedCount").innerHTML=
+remedySelectedDiseases.length;
+
+}
+
+</script>
+
+</body>
+
+</html>
